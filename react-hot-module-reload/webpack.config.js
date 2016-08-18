@@ -1,3 +1,17 @@
+var webpack = require('webpack');
+
+const devtool = (process.env.NODE_ENV !== 'production')?
+    'eval' : 'cheap-module-source-map';
+
+function getEntrySources(sources) {
+    if (process.env.NODE_ENV !== 'production') {
+        // sources.push('webpack-dev-server/client?http://localhost:8080');
+        sources.push('webpack-dev-server/client?http://0.0.0.0:8080');
+        sources.push('webpack/hot/only-dev-server');
+    }
+    return sources;
+}
+
 module.exports = {
     entry: getEntrySources(['./src/app.js']),
     output: {
@@ -6,9 +20,7 @@ module.exports = {
         path: 'build',
         filename: 'app.js'
     },
-    devtool: 'eval',
-    // change devtool for production compiliation
-    // devtool: 'cheap-module-source-map',
+    devtool: devtool,
     module: {
         preLoaders: [
             {
@@ -44,13 +56,13 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        // this is needed so that react drops development crap in production builds
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+            }
+        }),
+    ]
 };
-
-function getEntrySources(sources) {
-    if (process.env.NODE_ENV !== 'production') {
-        sources.push('webpack-dev-server/client?http://localhost:8080');
-        sources.push('webpack/hot/only-dev-server');
-    }
-    return sources;
-}
