@@ -1,10 +1,14 @@
 module.exports = {
     entry: getEntrySources(['./src/app.js']),
     output: {
-        publicPath: 'http://localhost:8080/',
-        filename: 'build/app.js'
+        // publicPath is used for loader that embed assets (images) so the URL is correct
+        publicPath: '/build/',
+        path: 'build',
+        filename: 'app.js'
     },
     devtool: 'eval',
+    // change devtool for production compiliation
+    // devtool: 'cheap-module-source-map',
     module: {
         preLoaders: [
             {

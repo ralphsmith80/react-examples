@@ -4,9 +4,9 @@
   "author": "Ralph Smith",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack-server": "webpack-dev-server --hot --progress --colors",
-    "web-server": "http-server -p 3000 .",
-    "start": "npm run webpack-server & npm run web-server"
+    "webpack-server": "webpack-dev-server --hot --progress --colors --host 0.0.0.0",
+    "web-server": "http-server -a 0.0.0.0 -p 3000 .",
+    "start": "npm run webpack-server"
   },
   "private": true,
   "dependencies": {},
