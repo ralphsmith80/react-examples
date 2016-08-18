@@ -1,7 +1,6 @@
-var webpack = require('webpack');
-
-const devtool = (process.env.NODE_ENV !== 'production')?
-    'eval' : 'cheap-module-source-map';
+var webpack = require('webpack'),
+    devtool = (process.env.NODE_ENV !== 'production')?
+        'eval' : 'cheap-module-source-map';
 
 function getEntrySources(sources) {
     if (process.env.NODE_ENV !== 'production') {
