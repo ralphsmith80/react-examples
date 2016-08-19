@@ -16,7 +16,7 @@ npm install
 npm run start
 ````
 
-The server is now running at [localhost:3000](localhost:3000)
+The server is now running at [localhost:8080](localhost:8080)
 
 4. Hot Module Reload
 
