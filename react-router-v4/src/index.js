@@ -139,31 +139,43 @@
 // render(<App/>, document.querySelector('#root'))
 
 // Bare Bones Miss ----------------------------------------------
+// import React from 'react'
+// import { render } from 'react-dom'
+// import MatchGroup from 'react-router/MatchGroup'
+// import Match from 'react-router/Match'
+// import Miss from 'react-router/Miss'
+// import Link from 'react-router/Link'
+// import Router from 'react-router/BrowserRouter'
+// import {
+//   BrowserRouter as Router,
+//   Match,
+//   Miss,
+//   Link,
+// } from 'react-router'
+// import MatchGroup from 'react-router/MatchGroup'
+
+// const App = () => (
+//   <Router>
+//     <div>
+//       <ul>
+//         <li><Link to="/foo">Home</Link></li>
+//         <li><Link to="/Missed">Missed</Link></li>
+//       </ul>
+//       <MatchGroup>
+//         <Match pattern="/foo" render={() => <h1>Home</h1>}/>
+//         <Match pattern="/bar"/>
+//         <Miss render={({ location }) => (
+//           <div>Nothing matched {location.pathname}.</div>
+//         )}/>
+//       </MatchGroup>
+//     </div>
+//   </Router>
+// )
+
+// render(<App/>, document.querySelector('#root'))
+
+// MatchGroup / Miss fix ----------------------------------------------
 import React from 'react'
 import { render } from 'react-dom'
-import Match from 'react-router/Match'
-import Miss from 'react-router/Miss'
-import Link from 'react-router/Link'
-import Router from 'react-router/BrowserRouter'
-
-
-const NoMatch = ({ location }) => (
-  <div>Nothing matched {location.pathname}.</div>
-)
-
-const App = () => (
-  <Router>
-    <div>
-      <ul>
-        <li><Link to="/missed">Home</Link></li>
-      </ul>
-      <Match pattern="/foo"/>
-      <Match pattern="/bar"/>
-      <Miss render={({ location }) => (
-        <div>Nothing matched {location.pathname}.</div>
-      )}/>
-    </div>
-  </Router>
-)
-
+import App from './examples/MatchGroup';
 render(<App/>, document.querySelector('#root'))
