@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-
 import Socket from './Socket';
+
 let socket = new Socket();
 
 class App extends Component {
