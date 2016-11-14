@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Socket from './Socket';
 
-let socket = new Socket();
+let socket = Socket();
 
 class App extends Component {
   render() {

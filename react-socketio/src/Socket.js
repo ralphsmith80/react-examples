@@ -22,4 +22,8 @@ class Socket {
   }
 }
 
-export default Socket
+// export default Socket
+const socket = new Socket();
+export default (() => {
+  return socket;
+})
