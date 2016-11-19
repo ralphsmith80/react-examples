@@ -40,7 +40,15 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(jpe?g|png|gif|svg)$/i,
+                test: /\.svg$/i,
+                include: /src/,
+                loaders: [
+                    'raw-loader',
+                ]
+            },
+            {
+                // test: /\.(jpe?g|png|gif|svg)$/i,
+                test: /\.(jpe?g|png|gif)$/i,
                 loaders: [
                     'url?limit=8192',
                     'img'

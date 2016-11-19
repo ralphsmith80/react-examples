@@ -10,7 +10,9 @@
     "start": "npm run webpack-server"
   },
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "raw-loader": "^0.5.1"
+  },
   "devDependencies": {
     "autoprefixer-loader": "^3.1.0",
     "babel-core": "^6.3.21",
